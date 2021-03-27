@@ -1,45 +1,9 @@
 <?PHP
 
-/*
-To use for editing in a tool (requires a bot.ini file, see below):
-
-require_once ( __DIR__ . '/public_html/quickstatements.php' ) ;
-
-function getQS () {
-	$toolname = '' ; // Or fill this in manually
-	$path = realpath(dirname(__FILE__)) ;
-	$user = get_current_user() ;
-	if ( $toolname != '' ) {}
-	else if ( preg_match ( '/^tools\.(.+)$/' , $user , $m ) ) $toolname = $m[1] ;
-	else if ( preg_match ( '/^\/mnt\/nfs\/[^\/]+\/([^\/]+)/' , $path , $m ) ) $toolname = $m[1] ;
-	else if ( preg_match ( '/^\/data\/project\/([^\/]+)/' , $path , $m ) ) $toolname = $m[1] ;
-	if ( $toolname == '' ) die ( "getQS(): Can't determine the toolname for $path\n" ) ;
-	$qs = new QuickStatements() ;
-	$qs->use_oauth = false ;
-	$qs->config->bot_config_file = "/data/project/$toolname/bot.ini" ;
-	$qs->toolname = $toolname ;
-//	$qs->sleep = 1 ; // Sleep 1 sec between edits
-	return $qs ;
-}
-
-$qs = getQS() ;
-$commands = "Q123\tP456\tQ789" ; // Just QuickStatements V1 commands, can be multiple lines with "\n"
-$tmp = $qs->importData ( $commands , 'v1' ) ;
-$qs->runCommandArray ( $tmp['data']['commands'] ) ;
-
-
-A bot.ini file needs to exist in your tool home directory, looking like this:
-[user]
-user = YourBotName
-pass = YourBotPassword
-*/
-
-require_once ( __DIR__ . '/../../magnustools/public_html/php/common.php' ) ;
-require_once ( __DIR__ . '/../../magnustools/public_html/php/wikidata.php' ) ;
-require_once ( __DIR__ . '/../../magnustools/public_html/php/oauth.php' ) ;
+require_once ( __DIR__ . '/../vendor/magnusmanske/magnustools/public_html/php/common.php' ) ;
+require_once ( __DIR__ . '/../vendor/magnusmanske/magnustools/public_html/php/wikidata.php' ) ;
+require_once ( __DIR__ . '/../vendor/magnusmanske/magnustools/public_html/php/oauth.php' ) ;
 require_once ( __DIR__ . '/../vendor/autoload.php' ) ;
-
-// QuickStatements class
 
 class QuickStatements {
 
@@ -1523,5 +1487,3 @@ exit ( 1 ) ; // Force bot restart
 	}
 	
 } ;
-
-?>
