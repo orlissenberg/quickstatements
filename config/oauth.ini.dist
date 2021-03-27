@@ -1,0 +1,4 @@
+; HTTP User-Agent header
+agent = 'wikibase-php'
+consumerKey = ''
+consumerSecret = ''

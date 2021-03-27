@@ -9,8 +9,15 @@
     "addwiki/mediawiki-api": "~0.7.0",
     "magnusmanske/magnustools": "dev-main",
     "ext-json": "*",
-    "ext-curl": "*"
+    "ext-curl": "*",
+    "vlucas/phpdotenv": "^5.3",
+    "symfony/var-dumper": "^5.2"
   },
   "name": "quickstatements/quickstatements",
-  "description": "Quick-statements"
+  "description": "Quick-statements",
+  "autoload": {
+    "psr-4": {
+      "MagnusManske\\MagnusTools\\": "src/"
+    }
+  }
 }

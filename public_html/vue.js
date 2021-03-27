@@ -23,7 +23,7 @@ $(document).ready ( function () {
                 'vue_components/user-page.html',
                 ] ) ,
             new Promise(function(resolve, reject) {
-                $.get ( './config.json' , function (d) {
+                $.get ( './config.php' , function (d) {
                     config = d ;
                     resolve() ;
                 } , 'json' ) ;

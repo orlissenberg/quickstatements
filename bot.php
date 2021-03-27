@@ -1,19 +1,21 @@
 #!/usr/bin/php
-<?PHP
+<?php
 
-require_once(__DIR__ . '/public_html/quickstatements.php');
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use MagnusManske\MagnusTools\QuickStatements;
 
 function iterate()
 {
     $ret = 0;
-    $qs = new QuickStatements;
+    $qs = new QuickStatements();
     $db = $qs->getDB();
     $sql = "SELECT id,status FROM batch WHERE status IN ('INIT','RUN')";
     if (!$result = $db->query($sql)) {
         die('There was an error running the query [' . $db->error . ']');
     }
     while ($o = $result->fetch_object()) {
-        $qs2 = new QuickStatements;
+        $qs2 = new QuickStatements();
         if ($o->status == 'INIT') {
             if (!$qs2->startBatch($o->id)) {
                 print $qs2->last_error_message . "\n";
