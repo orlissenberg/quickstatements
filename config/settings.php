@@ -6,15 +6,15 @@ return [
     "sites" => [
         "wikidata" => [
             "oauth" => [
-                "language" => "en",
-                "project" => "wikidata",
-                "mwOAuthUrl" => env("MWOAUTHURL"),
+                "language" => env("MW_SITE_LANG"),
+                "project" => env("MW_SITE_NAME"),
+                "mwOAuthUrl" => env("WIKIBASE_SCHEME_AND_HOST") . "/index.php?title=Special:OAuth",
                 "mwOAuthIW" => "mw",
             ],
-            "server" => env("SERVER"),
-            "api" => env("API"),
-            "pageBase" => env("PAGEBASE"),
-            "entityBase" => env("ENTITYBASE"),
+            "server" => env("WIKIBASE_PUBLIC_HOST_AND_PORT"),
+            "api" => env("WIKIBASE_SCHEME_AND_HOST") . "/w/api.php",
+            "pageBase" => env("WIKIBASE_SCHEME_AND_HOST") . "/wiki/",
+            "entityBase" => env("WIKIBASE_SCHEME_AND_HOST") . "/entity/",
             "toolBase" => env("TOOLBASE"),
             "types" => [
                 "P" => [

@@ -1,4 +1,4 @@
-; HTTP User-Agent header
-agent = 'wikibase-php'
+;HTTP User-Agent header
+agent = 'Wikibase QuickStatements'
 consumerKey = ''
 consumerSecret = ''
