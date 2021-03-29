@@ -72,8 +72,8 @@ class QuickStatements
                 'mwOAuthIW' => $this->getSite()->oauth->mwOAuthIW,
                 'apiUrl' => $this->getSite()->api,
             ];
-            if (isset($this->getSite()->oauth->publicMwOAuthUrl)) {
-                $params['publicMwOAuthUrl'] = $this->getSite()->oauth->publicMwOAuthUrl;
+            if (isset($this->getSite()->oauth->mwOAuthPublicUrl)) {
+                $params['publicMwOAuthUrl'] = $this->getSite()->oauth->mwOAuthPublicUrl;
             }
             $this->oa = new MediaWikiOAuth($params);
         }

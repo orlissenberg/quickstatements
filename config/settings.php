@@ -9,6 +9,7 @@ return [
                 "language" => env("MEDIAWIKI_SITE_LANG"),
                 "project" => env("MEDIAWIKI_SITE_NAME"),
                 "mwOAuthUrl" => env("WIKIBASE_SCHEME_AND_HOST") . "/index.php?title=Special:OAuth",
+                "mwOAuthPublicUrl" => env("WIKIBASE_PUBLIC_HOST_AND_PORT") . "/index.php?title=Special:OAuth",
                 "mwOAuthIW" => "mw",
             ],
             "api" => env("WIKIBASE_PUBLIC_HOST_AND_PORT") . "/w/api.php",
