@@ -1,0 +1,4 @@
+;HTTP User-Agent header
+agent = 'Wikibase QuickStatements'
+consumerKey = '${OAUTH_CONSUMER_KEY}'
+consumerSecret = '${OAUTH_CONSUMER_SECRET}'

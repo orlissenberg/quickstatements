@@ -6,31 +6,30 @@ return [
     "sites" => [
         "wikidata" => [
             "oauth" => [
-                "language" => env("MW_SITE_LANG"),
-                "project" => env("MW_SITE_NAME"),
+                "language" => env("MEDIAWIKI_SITE_LANG"),
+                "project" => env("MEDIAWIKI_SITE_NAME"),
                 "mwOAuthUrl" => env("WIKIBASE_SCHEME_AND_HOST") . "/index.php?title=Special:OAuth",
                 "mwOAuthIW" => "mw",
             ],
-            "server" => env("WIKIBASE_PUBLIC_HOST_AND_PORT"),
-            "api" => env("WIKIBASE_SCHEME_AND_HOST") . "/w/api.php",
+            "api" => env("WIKIBASE_PUBLIC_HOST_AND_PORT") . "/w/api.php",
             "pageBase" => env("WIKIBASE_SCHEME_AND_HOST") . "/wiki/",
             "entityBase" => env("WIKIBASE_SCHEME_AND_HOST") . "/entity/",
             "toolBase" => env("TOOLBASE"),
             "types" => [
                 "P" => [
                     "type" => "property",
-                    "ns" => 120,
-                    "ns_prefix" => "Property:",
+                    "ns" => env("WIKIBASE_PROPERTY_NAMESPACE", null, 'int'),
+                    "ns_prefix" => env("WIKIBASE_PROPERTY_PREFIX"),
                 ],
                 "Q" => [
                     "type" => "item",
-                    "ns" => 0,
-                    "ns_prefix" => "",
+                    "ns" => env("WIKIBASE_ITEM_NAMESPACE", null, 'int'),
+                    "ns_prefix" => env("WIKIBASE_ITEM_PREFIX"),
                 ],
                 "L" => [
                     "type" => "lexeme",
-                    "ns" => 146,
-                    "ns_prefix" => "Lexeme:",
+                    "ns" => env("WIKIBASE_LEXEME_NAMESPACE", null, 'int'),
+                    "ns_prefix" => env("WIKIBASE_LEXEME_PREFIX"),
                 ],
             ],
         ],

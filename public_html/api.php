@@ -6,9 +6,16 @@ require_once(__DIR__ . '/../vendor/magnusmanske/magnustools/public_html/php/wiki
 
 use MagnusManske\MagnusTools\QuickStatements;
 use Dotenv\Dotenv;
+use Whoops\Handler\JsonResponseHandler;
+use Whoops\Run;
 
 $dotenv = Dotenv::createUnsafeImmutable(__DIR__ . '/../');
 $dotenv->load();
+
+// Handle exceptions
+$whoops = new Run;
+$whoops->pushHandler(new JsonResponseHandler());
+$whoops->register();
 
 error_reporting(E_ERROR | E_CORE_ERROR | E_ALL | E_COMPILE_ERROR);
 

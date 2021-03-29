@@ -11,7 +11,8 @@
     "ext-json": "*",
     "ext-curl": "*",
     "vlucas/phpdotenv": "^5.3",
-    "symfony/var-dumper": "^5.2"
+    "symfony/var-dumper": "^5.2",
+    "filp/whoops": "^2.11"
   },
   "name": "quickstatements/quickstatements",
   "description": "Quick-statements",
